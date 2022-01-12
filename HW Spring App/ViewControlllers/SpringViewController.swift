@@ -13,58 +13,37 @@ class SpringViewController: UIViewController {
     
     @IBOutlet var springLabels: [SpringLabel]!
     
-    var startedAnimation = false
+    var switchAnimation = false
+    
     var currentPreset = Spring.AnimationPreset.fadeIn
+
+    var currentCurve = Spring.AnimationCurve.spring
     
     @IBAction func pressedRunButton(_ sender: SpringButton) {
-        if !startedAnimation  {
-            springViewAnimation.animation = currentPreset.rawValue
-            springLabels[0].text = currentPreset.rawValue
-            startedAnimation = true
-        } else {
-            
-            let randomCGFloat = Float.random(in: 0...1)
-            guard let randomPreset = Spring.AnimationPreset.allCases.randomElement() else { return }
-            sender.setTitle("Run to preset: \(randomPreset.rawValue)", for: .normal)
-            currentPreset = randomPreset
-            springLabels[0].text = currentPreset.rawValue
-            startedAnimation = false
-            springViewAnimation.animation = randomPreset.rawValue
-            
-            guard let randomCurve = Spring.AnimationCurve.allCases.randomElement() else { return }
-            springViewAnimation.curve = randomCurve.rawValue
-            
-            springViewAnimation.force = 1
-            springViewAnimation.duration = CGFloat(randomCGFloat)
-            springViewAnimation.delay = CGFloat(randomCGFloat)
-        }
+        let randomForce = CGFloat.random(in: 0...1)
+        let randomDuration = CGFloat.random(in: 0...1)
+        let randomDelay = CGFloat.random(in: 0...1)
         
+        springViewAnimation.animation = currentPreset.rawValue
+        springViewAnimation.curve = currentCurve.rawValue
+        springViewAnimation.force = randomForce
+        springViewAnimation.duration = randomDuration
+        springViewAnimation.delay = randomDelay
         
+        springLabels[0].text = "Preset: \(currentPreset.rawValue)"
+        springLabels[1].text = "Curve: \(currentCurve.rawValue)"
+        springLabels[2].text = "Force: \(String(format: "%.2f", randomForce))"
+        springLabels[3].text = "Duration: \(String(format: "%.2f", randomDuration))"
+        springLabels[4].text = "Delay: \(String(format: "%.2f", randomDelay))"
         
-//        for springLabel in springLabels {
-//            switch springLabel.tag {
-//            case 0:
-//                springLabel.text = randomPreset.rawValue
-//            case 1:
-//                springLabel.text = randomCurve.rawValue
-//            case 2:
-//                springLabel.text = String(randomCGFloat)
-//            case 3:
-//                springLabel.text = String(randomCGFloat)
-//            default:
-//                springLabel.text = String(randomCGFloat)
-//            }
-//        }
+        guard let nextPreset = Spring.AnimationPreset.allCases.randomElement() else {return}
+        guard let nextCurve = Spring.AnimationCurve.allCases.randomElement() else { return }
         
-//        for springLabel in springLabels {
-//            if springLabel.tag == 0 {
-//                springLabel.text = randomPreset.rawValue
-//            } else if springLabel.tag == 1 {
-//                springLabel.text = randomCurve.rawValue
-//            } else {
-//                springLabel.text = String(randomCGFloat)
-//            }
-//        }
+        sender.setTitle("Run to preset: \(nextPreset.rawValue)", for: .normal)
+        
+        currentPreset = nextPreset
+        currentCurve = nextCurve
+        
         springViewAnimation.animate()
     }
 
