@@ -10,13 +10,9 @@ import Spring
 class SpringViewController: UIViewController {
     
     @IBOutlet weak var springViewAnimation: SpringView!
-    
     @IBOutlet var springLabels: [SpringLabel]!
     
-    var switchAnimation = false
-    
     var currentPreset = Spring.AnimationPreset.fadeIn
-
     var currentCurve = Spring.AnimationCurve.spring
     
     @IBAction func pressedRunButton(_ sender: SpringButton) {
@@ -39,14 +35,13 @@ class SpringViewController: UIViewController {
         guard let nextPreset = Spring.AnimationPreset.allCases.randomElement() else {return}
         guard let nextCurve = Spring.AnimationCurve.allCases.randomElement() else { return }
         
-        sender.setTitle("Run to preset: \(nextPreset.rawValue)", for: .normal)
+        sender.setTitle("Run next preset: \(nextPreset.rawValue)", for: .normal)
         
         currentPreset = nextPreset
         currentCurve = nextCurve
         
         springViewAnimation.animate()
     }
-
 }
 
 
