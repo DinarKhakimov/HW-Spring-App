@@ -10,37 +10,29 @@ import Spring
 class SpringViewController: UIViewController {
     
     @IBOutlet weak var springViewAnimation: SpringView!
-    @IBOutlet var springLabels: [SpringLabel]!
+    @IBOutlet weak var springDescriptionLabel: SpringLabel!
     
-    var currentPreset = Spring.AnimationPreset.fadeIn
-    var currentCurve = Spring.AnimationCurve.spring
+    var springAnimation = Animation.getAnimation()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        springDescriptionLabel.text = springAnimation.description
+    }
     
     @IBAction func pressedRunButton(_ sender: SpringButton) {
-        let randomForce = CGFloat.random(in: 0...1)
-        let randomDuration = CGFloat.random(in: 0...1)
-        let randomDelay = CGFloat.random(in: 0...1)
+        springDescriptionLabel.text = springAnimation.description
         
-        springViewAnimation.animation = currentPreset.rawValue
-        springViewAnimation.curve = currentCurve.rawValue
-        springViewAnimation.force = randomForce
-        springViewAnimation.duration = randomDuration
-        springViewAnimation.delay = randomDelay
-        
-        springLabels[0].text = "Preset: \(currentPreset.rawValue)"
-        springLabels[1].text = "Curve: \(currentCurve.rawValue)"
-        springLabels[2].text = "Force: \(String(format: "%.2f", randomForce))"
-        springLabels[3].text = "Duration: \(String(format: "%.2f", randomDuration))"
-        springLabels[4].text = "Delay: \(String(format: "%.2f", randomDelay))"
-        
-        guard let nextPreset = Spring.AnimationPreset.allCases.randomElement() else {return}
-        guard let nextCurve = Spring.AnimationCurve.allCases.randomElement() else { return }
-        
-        sender.setTitle("Run next preset: \(nextPreset.rawValue)", for: .normal)
-        
-        currentPreset = nextPreset
-        currentCurve = nextCurve
+        springViewAnimation.animation = springAnimation.preset
+        springViewAnimation.curve = springAnimation.curve
+        springViewAnimation.force = springAnimation.force
+        springViewAnimation.delay = springAnimation.delay
+        springViewAnimation.duration = springAnimation.duration
         
         springViewAnimation.animate()
+        
+        springAnimation = Animation.getAnimation()
+        
+        sender.setTitle("Run next: \(springAnimation.preset)", for: .normal)
     }
 }
 

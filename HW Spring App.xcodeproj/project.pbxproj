@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		859B938371A975DA93E2BA79 /* Pods_HW_Spring_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44473A39A3C706E7087A81F1 /* Pods_HW_Spring_App.framework */; };
+		9F71BA0A279C821C00589624 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71BA09279C821C00589624 /* Animation.swift */; };
+		9F71BA0D279C8BBF00589624 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F71BA0C279C8BBF00589624 /* DataManager.swift */; };
 		9F9F8FD0278F4322002C958F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F8FCF278F4322002C958F /* AppDelegate.swift */; };
 		9F9F8FD2278F4322002C958F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F8FD1278F4322002C958F /* SceneDelegate.swift */; };
 		9F9F8FD4278F4322002C958F /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F8FD3278F4322002C958F /* SpringViewController.swift */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		44473A39A3C706E7087A81F1 /* Pods_HW_Spring_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HW_Spring_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D19FE3AAC27DC252C91EE71 /* Pods-HW Spring App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW Spring App.release.xcconfig"; path = "Target Support Files/Pods-HW Spring App/Pods-HW Spring App.release.xcconfig"; sourceTree = "<group>"; };
+		9F71BA09279C821C00589624 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		9F71BA0C279C8BBF00589624 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9F9F8FCC278F4322002C958F /* HW Spring App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW Spring App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9F8FCF278F4322002C958F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F9F8FD1278F4322002C958F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F71BA0B279C822200589624 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F71BA09279C821C00589624 /* Animation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F71BA0E279C8BC500589624 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F71BA0C279C8BBF00589624 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9F9F8FC3278F4322002C958F = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				9F9F8FE7278F71B1002C958F /* SupportsFiles */,
+				9F71BA0B279C822200589624 /* Models */,
 				9F9F8FE5278F7182002C958F /* ViewControlllers */,
 				9F9F8FE6278F7197002C958F /* Storyboards */,
 				9F9F8FE8278F71C7002C958F /* Resources */,
+				9F71BA0E279C8BC500589624 /* Services */,
 			);
 			path = "HW Spring App";
 			sourceTree = "<group>";
@@ -239,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F9F8FD4278F4322002C958F /* SpringViewController.swift in Sources */,
+				9F71BA0D279C8BBF00589624 /* DataManager.swift in Sources */,
 				9F9F8FD0278F4322002C958F /* AppDelegate.swift in Sources */,
+				9F71BA0A279C821C00589624 /* Animation.swift in Sources */,
 				9F9F8FD2278F4322002C958F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,42 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWv-1q-i4C" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="40" y="84" width="334" height="129"/>
+                                <rect key="frame" x="40" y="84" width="72.5" height="37"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-yy-nk4">
-                                        <rect key="frame" x="10" y="10" width="314" height="109"/>
+                                        <rect key="frame" x="10" y="10" width="52.5" height="17"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-i7-QUa" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="17"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="curve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lun-eX-V3y" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="0.0" y="23" width="314" height="17"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="force" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abc-r8-oQp" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="0.0" y="46" width="314" height="17"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvV-UQ-NNb" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="0.0" y="69" width="314" height="17"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHd-BW-vfE" customClass="SpringLabel" customModule="Spring">
-                                                <rect key="frame" x="0.0" y="92" width="314" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preset" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-i7-QUa" customClass="SpringLabel" customModule="Spring">
+                                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="17"/>
                                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -75,7 +46,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="918-no-jHy" customClass="SpringButton" customModule="Spring">
-                                <rect key="frame" x="40" y="687.5" width="334" height="31"/>
+                                <rect key="frame" x="40" y="687.5" width="72.5" height="31"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
@@ -102,12 +73,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="springDescriptionLabel" destination="iEk-i7-QUa" id="9Ns-Ty-SUa"/>
                         <outlet property="springViewAnimation" destination="RWv-1q-i4C" id="2h8-Hx-PS5"/>
-                        <outletCollection property="springLabels" destination="iEk-i7-QUa" collectionClass="NSMutableArray" id="ynz-YR-ILY"/>
-                        <outletCollection property="springLabels" destination="lun-eX-V3y" collectionClass="NSMutableArray" id="327-zG-tY3"/>
-                        <outletCollection property="springLabels" destination="Abc-r8-oQp" collectionClass="NSMutableArray" id="XZc-pI-BWu"/>
-                        <outletCollection property="springLabels" destination="QvV-UQ-NNb" collectionClass="NSMutableArray" id="Ube-7Y-Stw"/>
-                        <outletCollection property="springLabels" destination="sHd-BW-vfE" collectionClass="NSMutableArray" id="Npu-oM-9iC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
